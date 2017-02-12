@@ -1,0 +1,52 @@
+# -------------------------------
+# MapProxy example configuration.
+# -------------------------------
+#
+# This is a minimal MapProxy configuration.
+# See full_example.yaml and the documentation for more options.
+#
+
+# Starts the following services:
+# Demo:
+#     http://localhost:8080/demo
+# WMS:
+#     capabilities: http://localhost:8080/service?REQUEST=GetCapabilities
+# WMTS:
+#     capabilities: http://localhost:8080/wmts/1.0.0/WMTSCapabilities.xml
+#     first tile: http://localhost:8080/wmts/gm_layer/gm_grid/0/0/0.png
+
+
+services:
+  demo:
+  kml:
+  wmts:
+  wms:
+    md:
+      title: MapProxy WMS Proxy
+      abstract: This is a minimal MapProxy example.
+
+layers:
+  - name: gm_layer
+    title: Test of using GM tiles
+    sources: [gm_cache]
+
+caches:
+  gm_cache:
+    grids: [gm_grid]
+    sources: [gm]
+    cache:
+      type: file
+      directory_layout: tms
+
+sources:
+  gm:
+    type: tile
+    url: http://mt0.google.com/vt/lyrs=s@0&hl=en&x=%(x)s&y=%(y)s&z=%(z)s
+    grid: gm_grid
+
+grids:
+  gm_grid:
+    base: GLOBAL_MERCATOR
+    origin: ul
+
+globals:
