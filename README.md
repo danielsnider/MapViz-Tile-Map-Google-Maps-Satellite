@@ -1,6 +1,7 @@
-# MapViz Tile Map + Google Maps Satellite +  MapProxy
-This will walk you through using [MapProxy](https://mapproxy.org/) in a docker container to proxy Google Maps satellite view into a [WMTS](https://en.wikipedia.org/wiki/Web_Map_Tile_Service) tile service so that it can be viewed by ROS's [MapViz Tile Map plugin](https://github.com/swri-robotics/mapviz#tile-map).
+# ROS MapViz Tile Map + Google Maps Satellite + MapProxy
+This will walk you through using [MapProxy](https://mapproxy.org/) in a docker container to proxy Google Maps satellite view into a [WMTS](https://en.wikipedia.org/wiki/Web_Map_Tile_Service) tile service so that it can be viewed by ROS's [MapViz Tile Map plugin](https://github.com/swri-robotics/mapviz#tile-map). Support for offline viewing of maps after loading once.
 
+![screenshot](https://github.com/danielsnider/MapViz-Tile-Map-Google-Maps-Satellite/raw/master/screenshot.png)
 
 ## Dependencies
 
@@ -62,13 +63,17 @@ Congrats! You should now see Google Maps load in MapViz.
 
 
 ## FAQ
-### Where are MapProxy cache files?
+### Offline Support?
+
+Any maps that you load will be cached to `~/mapproxy/cache_data` and will be available offline.
+
+### Where are MapProxy's cached files?
 
 ```
 ~/mapproxy/cache_data
 ```
 
-### How to set default MapViz position?
+### How to set a default MapViz position?
 
 ```
 $ vim ~/.mapviz_config 
@@ -99,7 +104,7 @@ $ vim launch/mapviz.launch
 </launch>
 ```
 
-### How to publish GPS coordinates over ROS
+### How to publish GPS coordinates over ROS?
 
 ```
 rostopic pub /novatel/fix sensor_msgs/NavSatFix "{latitude: 38.406222, longitude: -110.792027}"
@@ -108,3 +113,7 @@ rostopic pub /novatel/fix sensor_msgs/NavSatFix "{latitude: 38.406222, longitude
 ### Note for corporate users
 
 In 2013 there was [some discussion](http://gis.stackexchange.com/questions/56982/how-to-use-mapproxy-to-serve-wms-from-reprojected-google-maps-tiles) about Google's Terms & Conditions stating that you are only allowed to access the tiles through Google's API (ie. not MapProxy). 
+
+### Project Motivation
+
+Built for competing in the [University Rover Competition](http://urc.marssociety.org/) by Ryerson University's http://teamr3.ca/ robot club.
