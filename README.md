@@ -1,5 +1,15 @@
-# ROS MapViz Tile Map + Google Maps Satellite + MapProxy
+# ROS Offline Google Maps (MapViz)
+### ROS MapViz Tile Map + MapProxy + Google Maps Satellite
 This will walk you through using [MapProxy in a docker container](https://github.com/danielsnider/docker-mapproxy-googlemaps) to proxy Google Maps satellite view into a [WMTS](https://en.wikipedia.org/wiki/Web_Map_Tile_Service) tile service so that it can be viewed by ROS's [MapViz Tile Map plugin](https://github.com/swri-robotics/mapviz#tile-map). Support for offline viewing of maps after loading once.
+
+### `tldr:`
+```
+$ docker run -p 8080:8080 -d -t -v ~/mapproxy:/mapproxy danielsnider/mapproxy
+Then put this URL into the MapViz option "Custom WMTS Source..." http://localhost:8080/wmts/gm_layer/gm_grid/{level}/{x}/{y}.png
+```
+
+Result:
+
 
 ![screenshot](https://github.com/danielsnider/MapViz-Tile-Map-Google-Maps-Satellite/raw/master/screenshot.png)
 
