@@ -13,6 +13,8 @@ Result:
 
 ![screenshot](https://github.com/danielsnider/MapViz-Tile-Map-Google-Maps-Satellite/raw/master/screenshot.png)
 
+MapViz documentation: http://wiki.ros.org/mapviz
+
 ## Dependencies
 
 - Docker
