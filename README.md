@@ -1,6 +1,6 @@
 # ROS Offline Google Maps (MapViz)
 ### MapViz (Tile_Map plugin) <-- MapProxy <-- Google Maps Satellite
-This will walk you through using [MapProxy in a docker container](https://github.com/danielsnider/docker-mapproxy-googlemaps) to proxy Google Maps satellite view into a [WMTS](https://en.wikipedia.org/wiki/Web_Map_Tile_Service) tile service so that it can be viewed by ROS's [MapViz Tile Map plugin](https://github.com/swri-robotics/mapviz#tile-map). Support for offline maps after loading once. Great for outdoor robotics and vehicles.
+This will walk you through using [MapProxy in a docker container](https://github.com/danielsnider/docker-mapproxy-googlemaps) to proxy Google Maps satellite view into a [WMTS](https://en.wikipedia.org/wiki/Web_Map_Tile_Service) tile service so that it can be viewed by ROS's [MapViz Tile Map plugin](https://github.com/swri-robotics/mapviz#tile-map). Support for offline maps after loading once, maps stay cached. For outdoor robotics and vehicles.
 
 ### `tldr:`
 ```
