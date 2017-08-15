@@ -49,7 +49,7 @@ cp mapproxy.yaml ~/mapproxy/mapproxy.yaml
 sudo docker run -p 8080:8080 -d -t -v ~/mapproxy:/mapproxy danielsnider/mapproxy
 ```
 
-1.3. Confirm MapProxy is working by browsing to [http://127.0.0.1:8080/demo/](http://127.0.0.1:8080/demo/). You will see the MapProxy logo and if you click on "Image-format png" you will get an interactive map in your browser. 
+1.4. Confirm MapProxy is working by browsing to [http://127.0.0.1:8080/demo/](http://127.0.0.1:8080/demo/). You will see the MapProxy logo and if you click on "Image-format png" you will get an interactive map in your browser. 
 
 You can also see the first map tile by browsing to [http://localhost:8080/wmts/gm_layer/gm_grid/0/0/0.png](http://localhost:8080/wmts/gm_layer/gm_grid/0/0/0.png).
 
